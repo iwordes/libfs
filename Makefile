@@ -14,11 +14,12 @@ FN     := $(addsuffix .o,$(addprefix build/,$(FN)))
 all: lib/$(NAME).a
 
 .PHONY: clean
+clean:
 	rm -rf build
 
 .PHONY: fclean
 fclean: clean
-	rm -f lib/$(NAME).a
+	rm -rf lib
 
 .PHONY: re
 re: fclean all
