@@ -11,7 +11,7 @@ FN     := $(addsuffix .o,$(addprefix build/,$(FN)))
 
 
 .PHONY: all
-all: lib/$(NAME).a
+all: $(NAME).a
 
 .PHONY: clean
 clean:
@@ -19,19 +19,18 @@ clean:
 
 .PHONY: fclean
 fclean: clean
-	rm -rf lib
+	rm -f $(NAME).a
 
 .PHONY: re
 re: fclean all
 
 .PHONY: $(NAME)
-$(NAME): lib/$(NAME).a
+$(NAME): $(NAME).a
 
 
 build/%.o: src/%.c
 	@mkdir -p build
 	$(CC) $(CF) -c -o $@ $<
 
-lib/$(NAME).a: $(FN)
-	@mkdir -p lib
-	libtool -static -o lib/$(NAME).a $(FN)
+$(NAME).a: $(FN)
+	libtool -static -o $(NAME).a $(FN)
