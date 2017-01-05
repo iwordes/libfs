@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 09:30:36 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/04 15:41:35 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/01/04 19:43:46 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*fs_join(const char *path1, const char *path2)
 	fs__memcpy(path, path1, l1);
 	path[l1] = '/';
 	fs__memcpy(path + l1 + 1, path2, l2);
-	path[l1 + l2 + 2] = 0;
+	path[l1 + l2 + 1] = 0;
 	return (path);
 }
