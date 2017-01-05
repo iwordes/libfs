@@ -5,6 +5,7 @@ FN__    = fs__strdup \
 FN_BOOL = fs_exists \
 		  fs_isblk \
 		  fs_isdev \
+		  fs_isdir \
 		  fs_isfile \
 		  fs_islink \
 		  fs_ispipe \
