@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 12:39:55 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/04 16:38:46 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/01/05 21:05:11 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+# include <sys/xattr.h>
+# include <unistd.h>
 
 # ifndef TRUE
 #  define TRUE 1
@@ -49,6 +51,8 @@ char		**fs_listdir(const char *path);
 char		**fs_qlistdir(const char *path);
 
 unsigned	fs_dirlen(const char *path);
+
+const char	*fs_readlink(const char *path);
 
 /*
 ** ^ Helpers

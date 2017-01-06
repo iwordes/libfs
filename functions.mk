@@ -16,8 +16,9 @@ FN_HELP = fs_dirlen \
 		  fs_join \
 		  fs_listdir \
 		  fs_qlistdir \
-		  fs_vjoin
+		  fs_vjoin \
+		  fs_readlink
 
-FN_INFO = 
+FN_INFO =
 
-FN_OPS  = 
+FN_OPS  =
