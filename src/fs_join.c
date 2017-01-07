@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 09:30:36 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/04 19:43:46 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/01/06 19:11:26 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ char	*fs_join(const char *path1, const char *path2)
 
 	NULL_GUARD(path1);
 	NULL_GUARD(path2);
+	if (path1[0] == 0)
+		return (fs__strdup(path2));
+	else if (path2[0] == 0)
+		return (fs__strdup(path1));
 	l1 = fs__strlen(path1);
 	l2 = fs__strlen(path2);
 	NULL_GUARD(path = (char*)malloc(l1 + l2 + 2));
