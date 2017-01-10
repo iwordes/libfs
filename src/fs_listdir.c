@@ -6,13 +6,13 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 11:40:14 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/04 15:52:58 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/01/09 20:36:18 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libfs.h>
 
-static char	**_panic(char **paths)
+static char		**panic_(char **paths)
 {
 	unsigned	i;
 
@@ -56,12 +56,12 @@ char			**fs_listdir(const char *path)
 	while (i < l && (dirent = readdir(dir)) != NULL)
 	{
 		if ((paths[i] = fs__strdup(dirent->d_name)) == NULL)
-			return (_panic(paths));
+			return (panic_(paths));
 		i += 1;
 	}
 	paths[i] = NULL;
 	if (i < l)
-		return (_panic(paths));
+		return (panic_(paths));
 	closedir(dir);
 	return (paths);
 }

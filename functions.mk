@@ -17,7 +17,9 @@ FN_HELP = fs_dirlen \
 		  fs_listdir \
 		  fs_qlistdir \
 		  fs_vjoin \
-		  fs_readlink
+		  fs_readlink \
+		  fs_dirname \
+		  fs_basename
 
 FN_INFO =
 

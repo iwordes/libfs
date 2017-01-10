@@ -1,6 +1,6 @@
 NAME    = libfs
 AUTHOR  = iwordes
-VERSION = 1.0.0
+VERSION = 1.0.1
 
 CC      = gcc
 CF      = -Wall -Wextra -Werror -I include

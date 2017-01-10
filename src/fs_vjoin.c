@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 12:37:21 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/04 16:00:40 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/01/09 20:32:07 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static size_t	fs_vjoin_len(const char *path, va_list o_args)
 ** Join multiple strings together with '/'.
 */
 
-char	*fs_vjoin(const char *paths, ...)
+char			*fs_vjoin(const char *paths, ...)
 {
 	va_list		args;
 	char		*path;
@@ -42,7 +42,7 @@ char	*fs_vjoin(const char *paths, ...)
 	return (path);
 }
 
-char	*fs_vjoin_(const char *paths, va_list args)
+char			*fs_vjoin_(const char *paths, va_list args)
 {
 	char	*path;
 	size_t	tl;
