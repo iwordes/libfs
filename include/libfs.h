@@ -6,12 +6,24 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 12:39:55 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/09 20:39:01 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/01/10 11:09:17 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFS_H
 # define LIBFS_H
+
+/*
+** NOTE:
+** Some functions in libfs may use the following functions:
+** - free
+** - lstat
+** - malloc
+** - open
+** - read
+** - stat
+** - write
+*/
 
 # include <dirent.h>
 # include <stdarg.h>
@@ -174,6 +186,7 @@ char		fs_istty(const char *path);
 */
 char		*fs__strdup(const char *str);
 size_t		fs__strlen(const char *str);
+char		*fs__strsub(const char *str, size_t offset, size_t limit);
 void		fs__memcpy(void *dest, const void *src, size_t limit);
 
 #endif

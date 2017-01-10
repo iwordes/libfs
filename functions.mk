@@ -1,5 +1,6 @@
 FN__    = fs__strdup \
 		  fs__strlen \
+		  fs__strsub \
 		  fs__memcpy
 
 FN_BOOL = fs_exists \
