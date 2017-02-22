@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 12:39:55 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/10 11:09:17 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/02/22 14:16:38 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 # include <dirent.h>
 # include <stdarg.h>
+# include <stdbool.h>
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/stat.h>
@@ -47,7 +48,11 @@
 
 # define FS_VJOIN(ARGS...) fs_pathjoin(ARGS, NULL)
 
-typedef struct stat	t_stat;
+# define FS_TYPE_STAT typedef struct stat	t_stat
+# define FS_TYPE_DENT typedef struct dirent	t_dent
+
+FS_TYPE_STAT;
+FS_TYPE_DENT;
 
 /*
 ** v Helpers
@@ -68,6 +73,8 @@ const char	*fs_readlink(const char *path);
 
 char		*fs_dirname(const char *path);
 char		*fs_basename(const char *path);
+
+bool		fs_search(const char *path, const char *name);
 
 /*
 ** ^ Helpers
@@ -184,6 +191,7 @@ char		fs_istty(const char *path);
 /*
 ** INTERNAL
 */
+int			fs__strcmp(const char *str1, const char *str2);
 char		*fs__strdup(const char *str);
 size_t		fs__strlen(const char *str);
 char		*fs__strsub(const char *str, size_t offset, size_t limit);

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fs_islink.c                                        :+:      :+:    :+:   */
+/*   fs__strcmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/04 15:12:23 by iwordes           #+#    #+#             */
-/*   Updated: 2017/01/10 16:16:46 by iwordes          ###   ########.fr       */
+/*   Created: 2017/02/22 14:00:53 by iwordes           #+#    #+#             */
+/*   Updated: 2017/02/22 14:14:22 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libfs.h>
 
-char	fs_islink(const char *path)
+int		fs__strcmp(const char *str1, const char *str2)
 {
-	t_stat	buffer;
+	size_t	i;
 
-	if (lstat(path, &buffer) != 0)
-		return (FALSE);
-	return (S_ISLNK(buffer.st_mode));
+	if (str1 == str2)
+		return (0);
+	i = 0;
+	while (str1[i] == str2[i] && str1[i] != 0)
+		i += 1;
+	return ((unsigned)(*str1) - (unsigned)(*str2));
 }

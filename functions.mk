@@ -1,4 +1,5 @@
-FN__    = fs__strdup \
+FN__    = fs__strcmp \
+		  fs__strdup \
 		  fs__strlen \
 		  fs__strsub \
 		  fs__memcpy
@@ -20,7 +21,8 @@ FN_HELP = fs_dirlen \
 		  fs_vjoin \
 		  fs_readlink \
 		  fs_dirname \
-		  fs_basename
+		  fs_basename \
+		  fs_search
 
 FN_INFO =
 
