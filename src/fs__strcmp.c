@@ -6,7 +6,7 @@
 /*   By: iwordes <iwordes@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 14:00:53 by iwordes           #+#    #+#             */
-/*   Updated: 2017/02/22 14:14:22 by iwordes          ###   ########.fr       */
+/*   Updated: 2017/02/26 19:15:50 by iwordes          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int		fs__strcmp(const char *str1, const char *str2)
 	i = 0;
 	while (str1[i] == str2[i] && str1[i] != 0)
 		i += 1;
-	return ((unsigned)(*str1) - (unsigned)(*str2));
+	return ((unsigned)(str1[i]) - (unsigned)(str2[i]));
 }
